@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js 3</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="app">
+		{{ msg }}
+	</div>
+
+	<script src="vue3.0.7.js"></script>
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					msg: "Hello Vue.js!"
+				}
+			}
+		})
+
+		app.mount("#app")
+	</script>
+</body>
+</html>
