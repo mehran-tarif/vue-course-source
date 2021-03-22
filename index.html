@@ -26,7 +26,10 @@
 					Description: <input v-model="description">
 				</p>
 				<p>
-					Videos: <input type="number" v-model="videos">
+					Videos:
+					<button class="btn btn-success px-5 mr-1" @click="videos++">+</button>
+					<button class="btn btn-danger px-5 mr-1" @click="videos--">-</button>
+					<button class="btn btn-warning px-5" @click="videos=''">Clear</button>
 				</p>
 			</div>
 		</div>
