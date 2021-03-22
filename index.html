@@ -29,7 +29,7 @@
 					Videos:
 					<button class="btn btn-success px-5 mr-1" @click="videos++">+</button>
 					<button class="btn btn-danger px-5 mr-1" @click="videos--">-</button>
-					<button class="btn btn-warning px-5" @click="videos=''">Clear</button>
+					<button class="btn btn-warning px-5" @click="clearCourse('Cleared!')">Clear</button>
 				</p>
 			</div>
 		</div>
@@ -44,6 +44,15 @@
 					author: "Mehran Tarif",
 					description: "I love javascript!",
 					videos: 101,
+				}
+			},
+			methods: {
+				clearCourse(msg) {
+					this.videos='';
+					this.course='';
+					this.description='';
+					this.author='';
+					console.log(msg)
 				}
 			}
 		}).mount("#app")
