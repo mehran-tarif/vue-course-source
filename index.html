@@ -3,10 +3,20 @@
 <head>
 	<title>Vue.js 3</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
 	<div id="app">
-		{{ msg }}
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<h1 class="text-center m-3">Course</h1>
+				<hr>
+				<p>{{ course }}</p>
+				<p>{{ author }}</p>
+				<p>{{ description }}</p>
+				<p>{{ videos }}</p>
+			</div>
+		</div>
 	</div>
 
 	<script src="vue3.0.7.js"></script>
@@ -14,12 +24,13 @@
 		const app = Vue.createApp({
 			data() {
 				return {
-					msg: "Hello Vue.js!"
+					course: "Javascript",
+					author: "Mehran Tarif",
+					description: "I love javascript!",
+					videos: 101,
 				}
 			}
-		})
-
-		app.mount("#app")
+		}).mount("#app")
 	</script>
 </body>
 </html>
