@@ -44,7 +44,7 @@
 					course: "Javascript",
 					author: "Mehran Tarif",
 					description: "I love javascript!",
-					likes: 101,
+					likes: 98,
 					counter: 0,
 				}
 			},
@@ -58,9 +58,15 @@
 			},
 			computed: {
 				isHot() {
-					console.log("Calculation started..")
 					if (this.likes >= 100) {
 						return "(HOT)"
+					}
+				}
+			},
+			watch: {
+				likes(value) {
+					if (value == 100) {
+						alert("Congra .. you reached 100 likes!")
 					}
 				}
 			}
