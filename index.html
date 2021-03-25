@@ -10,11 +10,12 @@
 		<div class="row">
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
+				<button @click="counter++" class="btn btn-warning">{{ counter }}</button>
 				<hr>
-				<p>{{ course }}</p>
+				<p>{{ course }} {{ isHot }}</p>
 				<p>{{ author }}</p>
 				<p>{{ description }}</p>
-				<p>{{ videos }}</p>
+				<p>{{ likes }}</p>
 				<hr>
 				<p>
 					Course: <input v-model="course">
@@ -26,9 +27,9 @@
 					Description: <input v-model="description">
 				</p>
 				<p>
-					Videos:
-					<button class="btn btn-success px-5 mr-1" @click="videos++">+</button>
-					<button class="btn btn-danger px-5 mr-1" @click="videos--">-</button>
+					Likes:
+					<button class="btn btn-success px-5 mr-1" @click="likes++">+</button>
+					<button class="btn btn-danger px-5 mr-1" @click="likes--">-</button>
 					<button class="btn btn-warning px-5" @click="clearCourse('Cleared!')">Clear</button>
 				</p>
 			</div>
@@ -43,16 +44,24 @@
 					course: "Javascript",
 					author: "Mehran Tarif",
 					description: "I love javascript!",
-					videos: 101,
+					likes: 101,
+					counter: 0,
 				}
 			},
 			methods: {
 				clearCourse(msg) {
-					this.videos='';
+					this.likes='';
 					this.course='';
 					this.description='';
 					this.author='';
-					console.log(msg)
+				}
+			},
+			computed: {
+				isHot() {
+					console.log("Calculation started..")
+					if (this.likes >= 100) {
+						return "(HOT)"
+					}
 				}
 			}
 		}).mount("#app")
