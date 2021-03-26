@@ -11,15 +11,18 @@
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
 				<hr>
-				<div v-if="bookmark">
-					<p>{{ course }} {{ isHot }}</p>
-					<p>{{ author }}</p>
-					<p>{{ description }}</p>
-					<p>{{ likes }}</p>
-				</div>
-				<div v-else>
-					<div class="alert alert-danger">
-						Nothing!
+				<div v-for="course in courses">
+					<div v-if="course.bookmark">
+						<p>{{ course.title }}</p>
+						<p>{{ course.author }}</p>
+						<p>{{ course.description }}</p>
+						<p>{{ course.likes }}</p>
+						<hr>
+					</div>
+					<div v-else>
+						<div class="alert alert-danger">
+							Nothing!
+						</div>
 					</div>
 				</div>
 				<hr>
@@ -32,22 +35,40 @@
 		const app = Vue.createApp({
 			data() {
 				return {
-					course: "Javascript",
-					author: "Mehran Tarif",
-					description: "I love javascript!",
-					likes: 98,
-					bookmark: true,
+					courses: [
+						{
+							title: "Javascript",
+							author: "Mehran Tarif",
+							description: "I love javascript!",
+							likes: 98,
+							bookmark: false,
+						},
+						{
+							title: "Vue.js",
+							author: "Mehran Tarif",
+							description: "I love vue.js!",
+							likes: 10,
+							bookmark: false,
+						},
+						{
+							title: "React.js",
+							author: "Sam",
+							description: "I love react.js!",
+							likes: 30,
+							bookmark: false,
+						},
+					]
 				}
 			},
 			methods: {
 				
 			},
 			computed: {
-				isHot() {
-					if (this.likes >= 100) {
-						return "(HOT)"
-					}
-				}
+				// isHot() {
+				// 	if (this.likes >= 100) {
+				// 		return "(HOT)"
+				// 	}
+				// }
 			},
 			watch: {
 				
