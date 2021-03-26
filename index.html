@@ -11,21 +11,21 @@
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
 				<hr>
-				<div v-for="course in courses">
-					<div v-if="course.bookmark">
+				<div v-if="bookmarkedCourses.length != 0">
+					<div v-for="course in bookmarkedCourses">
 						<p>{{ course.title }}</p>
 						<p>{{ course.author }}</p>
 						<p>{{ course.description }}</p>
 						<p>{{ course.likes }}</p>
 						<hr>
 					</div>
-					<div v-else>
-						<div class="alert alert-danger">
-							Nothing!
-						</div>
-					</div>
 				</div>
-				<hr>
+				<div v-else>
+					<div class="alert alert-danger">
+						Nothing!
+					</div>
+					<hr>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -41,21 +41,21 @@
 							author: "Mehran Tarif",
 							description: "I love javascript!",
 							likes: 98,
-							bookmark: false,
+							bookmark: true,
 						},
 						{
 							title: "Vue.js",
 							author: "Mehran Tarif",
 							description: "I love vue.js!",
 							likes: 10,
-							bookmark: false,
+							bookmark: true,
 						},
 						{
 							title: "React.js",
 							author: "Sam",
 							description: "I love react.js!",
 							likes: 30,
-							bookmark: false,
+							bookmark: true,
 						},
 					]
 				}
@@ -69,6 +69,10 @@
 				// 		return "(HOT)"
 				// 	}
 				// }
+
+				bookmarkedCourses() {
+					return this.courses.filter(course => course.bookmark)
+				}
 			},
 			watch: {
 				
