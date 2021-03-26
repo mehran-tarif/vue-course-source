@@ -10,28 +10,19 @@
 		<div class="row">
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
-				<button @click="counter++" class="btn btn-warning">{{ counter }}</button>
 				<hr>
-				<p>{{ course }} {{ isHot }}</p>
-				<p>{{ author }}</p>
-				<p>{{ description }}</p>
-				<p>{{ likes }}</p>
+				<div v-if="bookmark">
+					<p>{{ course }} {{ isHot }}</p>
+					<p>{{ author }}</p>
+					<p>{{ description }}</p>
+					<p>{{ likes }}</p>
+				</div>
+				<div v-else>
+					<div class="alert alert-danger">
+						Nothing!
+					</div>
+				</div>
 				<hr>
-				<p>
-					Course: <input v-model="course">
-				</p>
-				<p>
-					Author: <input v-model="author">
-				</p>
-				<p>
-					Description: <input v-model="description">
-				</p>
-				<p>
-					Likes:
-					<button class="btn btn-success px-5 mr-1" @click="likes++">+</button>
-					<button class="btn btn-danger px-5 mr-1" @click="likes--">-</button>
-					<button class="btn btn-warning px-5" @click="clearCourse('Cleared!')">Clear</button>
-				</p>
 			</div>
 		</div>
 	</div>
@@ -45,16 +36,11 @@
 					author: "Mehran Tarif",
 					description: "I love javascript!",
 					likes: 98,
-					counter: 0,
+					bookmark: true,
 				}
 			},
 			methods: {
-				clearCourse(msg) {
-					this.likes='';
-					this.course='';
-					this.description='';
-					this.author='';
-				}
+				
 			},
 			computed: {
 				isHot() {
@@ -64,11 +50,7 @@
 				}
 			},
 			watch: {
-				likes(value) {
-					if (value == 100) {
-						alert("Congra .. you reached 100 likes!")
-					}
-				}
+				
 			}
 		}).mount("#app")
 	</script>
