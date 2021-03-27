@@ -14,7 +14,7 @@ const app = Vue.createApp({
 					author: "Mehran Tarif",
 					description: "I love vue.js!",
 					likes: 10,
-					bookmark: true,
+					bookmark: false,
 				},
 				{
 					title: "React.js",
