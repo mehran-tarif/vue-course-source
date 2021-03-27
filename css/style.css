@@ -1,0 +1,11 @@
+.course-wrapper {
+    padding: 20px;
+    background-color: #cafbf6;
+    border: 1px solid #7ed0c8;
+    border-radius: 5px;
+
+}
+.course-wrapper:nth-child(2n) {
+	background-color: #eef0b5;
+	border: 1px solid #a1a465;
+}

@@ -37,9 +37,13 @@ const app = Vue.createApp({
 		// 	}
 		// }
 
+		entiryCourses() {
+			return (this.filtered) ? this.bookmarkedCourses : this.courses
+		},
+
 		bookmarkedCourses() {
 			return this.courses.filter(course => course.bookmark)
-		}
+		},
 	},
 	watch: {
 		

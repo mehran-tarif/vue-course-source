@@ -4,6 +4,7 @@
 	<title>Vue.js 3</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div id="app">
@@ -17,16 +18,16 @@
 					<span v-else>All courses</span>
 				</div>
 				<hr>
-				<div v-if="courses.length != 0">
-					<div v-for="course in courses" class="row">
-						<p class="col">{{ course.title }}</p>
-						<p class="col">{{ course.author }}</p>
-						<p class="col">{{ course.description }}</p>
-						<p class="col">
-							<img src="img/true.png" v-if="course.bookmark" @click="course.bookmark = !course.bookmark">
-							<img src="img/false.png" v-else @click="course.bookmark = !course.bookmark">
+				<div v-if="entiryCourses.length != 0">
+					<div v-for="course in entiryCourses" class="row course-wrapper mb-2">
+						<p class="col mb-0">{{ course.title }}</p>
+						<p class="col mb-0">{{ course.author }}</p>
+						<p class="col mb-0">{{ course.description }}</p>
+						<p class="col mb-0">
+							<img src="img/true.png" v-if="course.bookmark" @click="course.bookmark = !course.bookmark" style="cursor: pointer;" width="28">
+							<img src="img/false.png" v-else @click="course.bookmark = !course.bookmark" style="cursor: pointer;" width="28">
 						</p>
-						<p class="col">{{ course.likes }}</p>
+						<p class="col mb-0">{{ course.likes }}</p>
 						<hr>
 					</div>
 				</div>
