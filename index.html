@@ -3,13 +3,19 @@
 <head>
 	<title>Vue.js 3</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
 	<div id="app">
 		<div class="row">
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
+				<hr>
+				<div>
+					<input type="checkbox" class="form-checkbox-input mr-2" v-model="filtered">
+					<span v-if="filtered">Bookmarked courses</span>
+					<span v-else>All courses</span>
+				</div>
 				<hr>
 				<div v-if="bookmarkedCourses.length != 0">
 					<div v-for="course in bookmarkedCourses">
@@ -30,54 +36,7 @@
 		</div>
 	</div>
 
-	<script src="vue3.0.7.js"></script>
-	<script>
-		const app = Vue.createApp({
-			data() {
-				return {
-					courses: [
-						{
-							title: "Javascript",
-							author: "Mehran Tarif",
-							description: "I love javascript!",
-							likes: 98,
-							bookmark: true,
-						},
-						{
-							title: "Vue.js",
-							author: "Mehran Tarif",
-							description: "I love vue.js!",
-							likes: 10,
-							bookmark: true,
-						},
-						{
-							title: "React.js",
-							author: "Sam",
-							description: "I love react.js!",
-							likes: 30,
-							bookmark: true,
-						},
-					]
-				}
-			},
-			methods: {
-				
-			},
-			computed: {
-				// isHot() {
-				// 	if (this.likes >= 100) {
-				// 		return "(HOT)"
-				// 	}
-				// }
-
-				bookmarkedCourses() {
-					return this.courses.filter(course => course.bookmark)
-				}
-			},
-			watch: {
-				
-			}
-		}).mount("#app")
-	</script>
+	<script src="js/vue3.0.7.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
