@@ -31,15 +31,13 @@ const app = Vue.createApp({
 		}
 	},
 	methods: {
-		
+		isHot(likes) {
+			if (likes >= 20) {
+				return "<span class='badge badge-danger'>hot!</span>"
+			}
+		},
 	},
 	computed: {
-		// isHot() {
-		// 	if (this.likes >= 100) {
-		// 		return "(HOT)"
-		// 	}
-		// }
-
 		entiryCourses() {
 			return (this.filtered) ? this.bookmarkedCourses : this.courses
 		},
