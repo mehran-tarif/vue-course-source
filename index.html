@@ -19,7 +19,7 @@
 				</div>
 				<hr>
 				<div v-if="entiryCourses.length != 0">
-					<div v-for="course in entiryCourses" class="row course-wrapper mb-2">
+					<div v-for="course in entiryCourses" class="row course mb-2" v-bind:class="{ bookmarked : course.bookmark }">
 						<p class="col mb-0">{{ course.title }}</p>
 						<p class="col mb-0">{{ course.author }}</p>
 						<p class="col mb-0">{{ course.description }}</p>
