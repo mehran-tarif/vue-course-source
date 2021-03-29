@@ -14,8 +14,8 @@
 				<hr>
 				<div>
 					<input type="checkbox" class="form-checkbox-input mr-2" v-model="filtered">
-					<span v-if="filtered">Bookmarked courses</span>
-					<span v-else>All courses</span>
+					<span v-show="filtered">Bookmarked courses</span>
+					<span v-show="!filtered">All courses</span>
 				</div>
 				<hr>
 				<div v-if="entiryCourses.length != 0">
