@@ -9,3 +9,5 @@
 	background-color: #eef0b5;
 	border: 1px solid #a1a465;
 }
+
+div.row.course { line-height: 64px; }
