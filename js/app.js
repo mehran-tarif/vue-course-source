@@ -36,6 +36,10 @@ const app = Vue.createApp({
 				return "<span class='badge badge-danger'>hot!</span>"
 			}
 		},
+		searchFocus() {
+			this.$refs.search.focus()
+			this.$refs.search.className = "form-control"
+		}
 	},
 	computed: {
 		entiryCourses() {

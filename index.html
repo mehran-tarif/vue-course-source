@@ -12,11 +12,14 @@
 			<div class="col-md-8 mx-auto">
 				<h1 class="text-center m-3">Course</h1>
 				<hr>
-				<div>
+				<div @click="searchFocus">
 					<input type="checkbox" class="form-checkbox-input mr-2" v-model="filtered">
 					<span v-show="filtered">Bookmarked courses</span>
 					<span v-show="!filtered">All courses</span>
 				</div>
+
+				<input ref="search">
+
 				<hr>
 				<div v-if="entiryCourses.length != 0">
 					<div v-for="course in entiryCourses" class="row course mb-2 p-2" :class="{ bookmarked : course.bookmark }">
