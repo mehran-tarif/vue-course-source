@@ -50,7 +50,9 @@ const app = Vue.createApp({
 			return this.courses.filter(course => course.bookmark)
 		},
 	},
-	watch: {
-		
+	watch: {},
+	mounted() {
+		this.$refs.search.focus()
+		this.$refs.search.className = "form-control"
 	}
 }).mount("#app")
