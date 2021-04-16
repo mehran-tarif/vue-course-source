@@ -40,7 +40,7 @@
 
     <button class="btn btn-success" @click="statusModal1 = true">Open Modal 1</button>
 
-    <Modal :status="statusModal1">
+    <Modal :status="statusModal1" @closeModal="statusModal1=false">
       <h1 class="text-center">Hello</h1>
       <hr>
       <p class="mb-0 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -51,8 +51,8 @@
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
       <template v-slot:links>
-        <button class="btn btn-success mr-1">Accept</button>
-        <button class="btn btn-danger">Deny</button>
+        <button class="btn btn-success mr-1" @click="statusModal1=false">Accept</button>
+        <button class="btn btn-danger" @click="statusModal1=false">Deny</button>
       </template>
     </Modal>
 
