@@ -1,5 +1,5 @@
 <template>
-	<button class="btn btn-secondary mr-1" @click="counter++">{{counter}}</button>
+	<button class="btn btn-secondary mr-1" @click="addCounter">{{counter}}</button>
 </template>
 
 <script>
@@ -8,6 +8,12 @@
 		data() {
 			return {
 				counter: 0
+			}
+		},
+		methods: {
+			addCounter() {
+				this.counter++
+				this.$emit("addTotalCounter")
 			}
 		}
 	}

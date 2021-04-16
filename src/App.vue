@@ -27,9 +27,13 @@
     <br>
     <br>
 
-    <Counter />
-    <Counter />
-    <Counter />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
+    <Counter @addTotalCounter="totalCounter++" />
 
   </div>
 </template>
