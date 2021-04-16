@@ -38,6 +38,8 @@
     <br>
     <br>
 
+    <button class="btn btn-success" @click="statusModal1 = true">Open Modal 1</button>
+
     <Modal :status="statusModal1">
       <h1 class="text-center">Hello</h1>
       <hr>
