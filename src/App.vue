@@ -35,16 +35,22 @@
     <Counter @addTotalCounter="totalCounter++" />
     <Counter @addTotalCounter="totalCounter++" />
 
+    <br>
+    <br>
+
+    <Modal />
+
   </div>
 </template>
 
 <script>
   import Alert from './components/Alert'
   import Counter from './components/Counter'
+  import Modal from './components/Modal'
 
   export default {
     name: "App",
-    components: { Alert, Counter },
+    components: { Alert, Counter, Modal },
     data() {
       return {
         title: "Hello Vue form JS",
