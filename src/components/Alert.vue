@@ -1,6 +1,9 @@
 <template>
-	<div class="alert" :class="`alert-` + type">
+	<div class="alert alert-dismissible" :class="`alert-` + type" v-show="status">
 		{{msg}}
+		<button class="close" @click="status=false">
+			<span>&times;</span>
+		</button>
 	</div>
 </template>
 
@@ -8,5 +11,10 @@
   export default {
     name: "Alert",
     props: ["msg", "type"],
+    data () {
+    	return {
+    		status: true
+    	}
+    }
   }
 </script>

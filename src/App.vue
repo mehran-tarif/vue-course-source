@@ -3,7 +3,9 @@
     <h1>{{ title }}</h1>
 
     <Alert :msg="msg1" type="success" />
+    <Alert :msg="msg1" type="secondary" />
     <Alert :msg="msg2" type="warning" />
+    <Alert :msg="msg2" type="danger" />
   </div>
 </template>
 
