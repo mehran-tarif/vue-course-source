@@ -1,10 +1,12 @@
 <template>
-	<div class="modal-wrapper position-fixed w-100 h-100 d-flex align-items-center justify-content-center">
-		<div class="mymodal p-4">
-			<slot></slot>
-			<hr>
-			<div class="text-center">
-				<slot name="links"></slot>
+	<div v-show="status">
+		<div class="modal-wrapper position-fixed w-100 h-100 d-flex align-items-center justify-content-center">
+			<div class="mymodal p-4">
+				<slot></slot>
+				<hr>
+				<div class="text-center">
+					<slot name="links"></slot>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -13,6 +15,7 @@
 <script>
 	export default {
 		name: "Modal",
+		props: ["status"]
 	}
 </script>
 
